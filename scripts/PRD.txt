@@ -1,0 +1,143 @@
+<context>
+# Overview  
+RPRT is a full-stack web application template that combines the performance and safety of Rust with the flexibility of modern web technologies. It provides developers with a production-ready foundation for building scalable, type-safe web applications with a React frontend and PostgreSQL database. The template solves the common challenge of setting up a new project with best practices in mind, saving developers significant time and reducing initial configuration overhead.
+
+# Core Features  
+## 1. Rust Backend with Axum
+- **What it does**: Provides a high-performance, type-safe backend server
+- **Why it's important**: Rust's safety guarantees and performance make it ideal for building reliable web services
+- **How it works**: Uses Axum web framework for routing and middleware, with SQLx for type-safe database interactions
+
+## 2. PostgreSQL Integration
+- **What it does**: Offers a robust relational database solution
+- **Why it's important**: Provides data persistence with ACID compliance and advanced querying capabilities
+- **How it works**: Uses SQLx for compile-time checked queries and database migrations
+
+## 3. React Frontend with TypeScript
+- **What it does**: Delivers a responsive, interactive user interface
+- **Why it's important**: TypeScript adds type safety to the frontend, catching errors at compile time
+- **How it works**: Built with Vite for fast development and optimized production builds
+
+## 4. Development Tooling
+- **What it does**: Includes comprehensive development tools and configurations
+- **Why it's important**: Ensures consistent development experience and code quality
+- **How it works**: Includes ESLint, Prettier, and other tools pre-configured
+
+# User Experience  
+## User Personas
+1. **Full-stack Developers**: Primary users who want to quickly start new projects
+2. **Backend Developers**: Rust developers needing a modern web frontend
+3. **Frontend Developers**: TypeScript/React developers who want a robust backend
+
+## Key User Flows
+1. **Project Initialization**: Clone, configure, and start development
+2. **Development Workflow**: Make changes with hot-reloading and type checking
+3. **Database Management**: Run and manage database migrations
+4. **Testing**: Run unit and integration tests
+5. **Deployment**: Deploy to various cloud providers
+
+## UI/UX Considerations
+- **Developer Experience**: Clear documentation and intuitive project structure
+- **Error Handling**: Helpful error messages and logging
+- **Performance**: Optimized builds and efficient development server
+</context>
+
+<PRD>
+# Technical Architecture  
+## System Components
+1. **Backend Service**: Rust application handling HTTP requests
+2. **Database Layer**: PostgreSQL with connection pooling
+3. **Frontend Application**: React SPA with TypeScript
+4. **Build System**: Cargo for Rust, npm for frontend
+5. **CI/CD**: GitHub Actions workflows
+
+## Data Models
+1. **User**: Authentication and authorization
+2. **Session**: Active user sessions
+3. **API Keys**: For external service integration
+4. **Application-specific models**: To be defined by users
+
+## APIs and Integrations
+- **RESTful API**: JSON-based endpoints for CRUD operations
+- **WebSocket**: Real-time communication (future enhancement)
+- **OAuth2/OIDC**: Authentication providers
+- **Email Service**: For notifications (SMTP/SES)
+
+## Infrastructure Requirements
+- **Runtime**: Rust 1.70+ for backend, Node.js 20+ for frontend
+- **Database**: PostgreSQL 17+
+- **Memory**: 1GB+ RAM recommended
+- **Storage**: 10GB+ disk space
+
+# Development Roadmap  
+## Phase 1: Core Template (MVP)
+- [ ] Basic project structure
+- [ ] Authentication system
+- [ ] Database setup with migrations
+- [ ] Basic CRUD API endpoints
+- [ ] Frontend with React and TypeScript
+- [ ] Development environment setup
+
+## Phase 2: Developer Experience
+- [ ] Enhanced error handling and logging
+- [ ] Comprehensive test suite
+- [ ] API documentation with OpenAPI/Swagger
+- [ ] Advanced configuration options
+- [ ] Performance optimizations
+
+## Phase 3: Production Readiness
+- [ ] Security hardening
+- [ ] Monitoring and observability
+- [ ] Horizontal scaling support
+- [ ] Advanced deployment options
+- [ ] Backup and recovery procedures
+
+# Logical Dependency Chain
+1. **Foundation Layer**
+   - Project structure
+   - Build system
+   - Basic configuration
+
+2. **Core Services**
+   - Database connection and migrations
+   - Authentication system
+   - Basic API endpoints
+
+3. **Frontend Integration**
+   - API client
+   - State management
+   - Basic UI components
+
+4. **Enhanced Features**
+   - Advanced authentication (OAuth2/OIDC)
+   - Real-time updates
+   - File uploads
+
+# Risks and Mitigations  
+## Technical Challenges
+- **Risk**: Complex Rust build times
+  - **Mitigation**: Implement incremental builds and caching
+
+- **Risk**: Database migration complexity
+  - **Mitigation**: Comprehensive testing and rollback procedures
+
+## MVP Scope
+- **Risk**: Feature creep in initial release
+  - **Mitigation**: Strict adherence to MVP requirements
+
+## Resource Constraints
+- **Risk**: Limited testing on different platforms
+  - **Mitigation**: CI/CD pipeline with multiple OS/version tests
+
+# Appendix  
+## Research Findings
+- Rust's performance and safety features make it ideal for web services
+- TypeScript significantly reduces frontend bugs
+- PostgreSQL provides the best balance of features and performance
+
+## Technical Specifications
+- **Backend**: Rust 1.70+, Axum 0.7
+- **Frontend**: React 18+, TypeScript 5.0+
+- **Database**: PostgreSQL 17+
+- **Build Tools**: Cargo, npm, Vite
+</PRD>
