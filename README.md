@@ -1,6 +1,85 @@
-# 🚀 RPRT Template
+# 🚀 RPRT (Rust PostgreSQL React TypeScript) Template
 
-A reusable, full-stack template for building modern web applications with Rust, PostgreSQL, React, and TypeScript. This template provides a modular structure with a performant Rust backend, a robust PostgreSQL database, and a React frontend with TypeScript for type-safe development.
+A production-ready, full-stack template for building modern web applications. This monorepo combines the performance and safety of Rust with the flexibility of React and TypeScript, providing a solid foundation for scalable web applications.
+
+## 🏗️ Project Structure
+
+```
+RPRT/
+├── backend/           # Rust backend service
+│   ├── src/           # Source code
+│   ├── api/           # API routes and handlers
+│   ├── migrations/     # Database migrations
+│   └── Cargo.toml     # Rust dependencies
+│
+├── frontend/         # React frontend
+│   ├── src/           # Source code
+│   ├── public/        # Static assets
+│   └── package.json   # Node.js dependencies
+│
+├── scripts/          # Development and deployment scripts
+│   └── PRD.txt        # Product Requirements Document
+│
+├── tasks/            # Task management files
+│   └── ...
+│
+├── .gitignore        # Git ignore rules
+└── README.md         # This file
+```
+
+## 🎯 Features
+
+- **Backend**: High-performance Rust server with Axum
+- **Frontend**: Modern React with TypeScript and Vite
+- **Database**: PostgreSQL with SQLx for type-safe queries
+- **Development**: Pre-configured with essential tools and workflows
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Rust (latest stable)
+- Node.js (v20+)
+- PostgreSQL (v17+ recommended)
+- Git
+
+### Quick Start
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/SHA888/RPRT.git
+   cd RPRT
+   ```
+
+2. Set up the backend:
+   ```bash
+   cd backend
+   cp .env.example .env
+   # Edit .env with your database credentials
+   cargo run
+   ```
+
+3. Set up the frontend:
+   ```bash
+   cd ../frontend
+   npm install
+   npm run dev
+   ```
+
+## 📚 Documentation
+
+- [Backend Development](./backend/README.md)
+- [Frontend Development](./frontend/README.md)
+- [Deployment Guide](./docs/DEPLOYMENT.md)
+- [API Reference](./docs/API.md)
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our [Contributing Guide](./CONTRIBUTING.md) for details.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🛠️ Tech Stack
 
