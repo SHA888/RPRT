@@ -59,12 +59,15 @@ RPRT/
    cargo run
    ```
 
-3. Set up the frontend:
+3. Set up the frontend (in a new terminal):
    ```bash
-   cd ../frontend
+   cd frontend
+   cp .env.example .env
    npm install
    npm run dev
    ```
+
+4. Open your browser to [http://localhost:5173](http://localhost:5173)
 
 ## 📚 Documentation
 
