@@ -1,4 +1,4 @@
-import { AppShell, Header as MantineHeader, Group, Title, Text, Box } from '@mantine/core';
+import { AppShell, Group, Title, Text, Box } from '@mantine/core';
 
 type HeaderProps = {
   title: string;
@@ -6,8 +6,8 @@ type HeaderProps = {
 };
 
 export const Header = ({ title, description }: HeaderProps) => (
-  <MantineHeader height={80} p="md">
-    <Group position="apart" sx={{ height: '100%' }}>
+  <AppShell.Header p="md" style={{ height: 80 }}>
+    <Group justify="space-between" style={{ height: '100%' }}>
       <Box>
         <Title order={2}>{title}</Title>
         {description && (
@@ -16,9 +16,7 @@ export const Header = ({ title, description }: HeaderProps) => (
           </Text>
         )}
       </Box>
-      <Group>
-        {/* Add navigation items here */}
-      </Group>
+      <Group>{/* Add navigation items here */}</Group>
     </Group>
-  </MantineHeader>
+  </AppShell.Header>
 );

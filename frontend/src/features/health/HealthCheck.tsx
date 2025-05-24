@@ -9,7 +9,7 @@ export const HealthCheck = () => {
     retry: 1,
     refetchOnWindowFocus: false,
   });
-  
+
   const status = data?.status;
   const version = data?.version;
 
@@ -23,17 +23,22 @@ export const HealthCheck = () => {
   return (
     <Card shadow="sm" p="lg" radius="md" withBorder>
       <Box>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: '1rem',
+          }}
+        >
           <Title order={3}>API Health Status</Title>
           {getStatusBadge()}
         </div>
 
         {isLoading && <LoadingOverlay visible={true} />}
-      
+
         {isError ? (
-          <Text color="red">
-            Error connecting to the API: {error?.message || 'Unknown error'}
-          </Text>
+          <Text color="red">Error connecting to the API: {error?.message || 'Unknown error'}</Text>
         ) : (
           <div>
             <Text>Status: {status || 'N/A'}</Text>

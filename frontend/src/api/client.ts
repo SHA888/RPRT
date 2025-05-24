@@ -1,4 +1,5 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios from 'axios';
+import type { AxiosInstance, AxiosResponse } from 'axios';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api';
 
@@ -33,7 +34,7 @@ axiosInstance.interceptors.response.use(
     if (error.response) {
       // Handle different HTTP status codes
       const { status, data } = error.response;
-      
+
       if (status === 401) {
         // Handle unauthorized access
         console.error('Unauthorized access - please login');
@@ -42,7 +43,7 @@ axiosInstance.interceptors.response.use(
       } else if (status >= 500) {
         console.error('Server error occurred');
       }
-      
+
       return Promise.reject(data || error);
     } else if (error.request) {
       // The request was made but no response was received
@@ -51,7 +52,7 @@ axiosInstance.interceptors.response.use(
       // Something happened in setting up the request
       console.error('Error setting up request:', error.message);
     }
-    
+
     return Promise.reject(error);
   }
 );

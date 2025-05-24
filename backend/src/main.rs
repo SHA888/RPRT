@@ -20,9 +20,31 @@ async fn main() -> Result<(), anyhow::Error> {
     let config = Config::from_env()?;
     info!("Starting server with config: {:#?}", config);
 
-    // Build our application with routes
+    // Configure CORS
+    let allowed_origins = [
+        "http://localhost:5173".parse::<axum::http::HeaderValue>().unwrap(),
+        "http://127.0.0.1:5173".parse::<axum::http::HeaderValue>().unwrap(),
+    ];
+
+    let cors = tower_http::cors::CorsLayer::new()
+        .allow_origin(tower_http::cors::AllowOrigin::list(allowed_origins))
+        .allow_methods([
+            axum::http::Method::GET,
+            axum::http::Method::POST,
+            axum::http::Method::PUT,
+            axum::http::Method::DELETE,
+            axum::http::Method::OPTIONS,
+        ])
+        .allow_headers([
+            axum::http::header::CONTENT_TYPE,
+            axum::http::header::AUTHORIZATION,
+        ])
+        .allow_credentials(true);
+
+    // Build our application with routes and middleware
     let app = api::create_router()
         .layer(tower_http::trace::TraceLayer::new_for_http())
+        .layer(cors)
         .with_state(());
 
     // Parse address

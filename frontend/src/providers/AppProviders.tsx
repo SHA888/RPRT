@@ -1,8 +1,9 @@
-import { MantineProvider, MantineThemeOverride } from '@mantine/core';
+import { MantineProvider } from '@mantine/core';
+import type { MantineThemeOverride } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 const theme: MantineThemeOverride = {
   defaultRadius: 'md',

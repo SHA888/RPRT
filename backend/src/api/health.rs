@@ -21,5 +21,5 @@ pub async fn health_check() -> impl IntoResponse {
 }
 
 pub fn create_health_router() -> Router {
-    Router::new().route("/health", get(health_check))
+    Router::new().route("/api/health", get(health_check))
 }
